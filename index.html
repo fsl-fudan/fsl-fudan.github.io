@@ -1,0 +1,317 @@
+
+ <!doctype html>
+<html>
+ <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+     <meta name="description" content="Few-shot Learning from Meta-Learning, Statistical Understanding to Applications">
+     <meta name="author" content="">
+ 
+     <title>FSL: CVPR 23 tutorial</title>
+ 
+     <!-- Bootstrap core CSS -->
+     <link href="css/bootstrap.min.css" rel="stylesheet">
+  
+     <!-- Custom Google Web Font -->
+     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+     
+     <!-- Custom CSS-->
+     <link href="css/general.css" rel="stylesheet">
+     
+      <!-- Owl-Carousel -->
+     <link href="css/custom.css" rel="stylesheet">
+     <link href="css/owl.carousel.css" rel="stylesheet">
+     <link href="css/owl.theme.css" rel="stylesheet">
+     <link href="css/style.css" rel="stylesheet">
+     <link href="css/animate.css" rel="stylesheet">
+     
+     <!-- Magnific Popup core CSS file -->
+     <link rel="stylesheet" href="css/magnific-popup.css"> 
+     
+     <script src="js/modernizr-2.8.3.min.js"></script>  
+ 
+ </head>
+ 
+ <body id="home">
+ 
+     <!-- Preloader -->
+     <div id="preloader">
+         <div id="status"></div>
+     </div>
+     
+     <!-- FullScreen -->
+     <div class="intro-header">
+         <div class="col-xs-12 text-center abcen1">
+             <h1 class="h1_home wow fadeIn" data-wow-delay="0.4s" style="text-shadow: 0 0 8px #000000;"> Few-shot Learning from Meta-Learning, Statistical Understanding to Applications</h1>
+             <h3 class="h3_home wow fadeIn" data-wow-delay="0.6s" style="text-shadow: 0px 8px 4px black, 0 0 25px black"> 
+                 <a style="color:white" href="https://cvpr2023.thecvf.com" target="_blank"><b>CVPR 2023</b></a> tutorial </p> 
+                 June 19<sup>th</sup> 2023 </p>
+                 Location: on site, TBD</p>
+             </h3>
+         </div>    
+     </div>
+     
+     <!-- NavBar-->
+     <nav class="navbar-default" role="navigation">
+         <div class="container">
+             <div class="navbar-header">
+                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                     <span class="sr-only">Toggle navigation</span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                 </button>
+                 <a class="navbar-brand" href="#home">FSL 2023</a>
+             </div>
+ 
+             <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+                 <ul class="nav navbar-nav">
+                     
+                     <li class="menuItem"><a href="#scope">Home</a></li>
+                     <li class="menuItem"><a href="#program">Program</a></li>
+                     <li class="menuItem"><a href="#organizers">Organizers and Speakers</a></li>	
+                     <li class="menuItem"><a href="#contacts">Contact</a></li>
+                 </ul>
+             </div>
+            
+         </div>
+     </nav> 
+     
+     <!-- Scope -->
+     <div id ="scope" class="content-section-a" style="border-top: 0">
+ 
+         <div class="container">
+             
+             <div class="row">
+             
+                 <div class="wow fadeInRightBig" data-animation-delay="200"> 
+                     <h3 class="section-heading">CVPR 2023 Tutorial on "Few-shot Learning from Meta-Learning, Statistical Understanding to Applications"</h3>
+                     <p class="lead"  style="text-align:justify">
+                        Deep learning models have excelled in many computer vision tasks such as image recognition. However, the aforementioned exceptional performance highly relies on the availability of sufficient labelled training data and is not maintained when applied to vision problems with limited training samples. For example, an object recognizer well trained on some known categories, including cat, dog etc., can fail to learn to recognize objects of a novel category, such as mouse, with one or a few training samples. This severely limits the scalability of a deployed model to open-ended learning in the real world, where limited training data is very common due to long tail data and other considerations. However, learning from extremely limited (e.g., one or few) examples is an important human ability. For example, kids have no problem recognizing a 'giraffe' by only glancing at a picture of a 'giraffe' beforehand. Motivated by the above observations, there has been a growing wave of research in few-shot learning (FSL), which aims to learn new concepts by adapting the learned knowledge with limited few-shot training (support) examples.<br>
+                        This tutorial will have three long talks, and two short talks. We will summarize the main contents of each talk.
+                     </p>
+                     <h4 class="section-heading">Introduction of Few-shot Learning</h4>
+                     <p class="lead"  style="text-align:justify">
+                        This talk is given by Dr. Da Li. We will give the overview of few-shot learning, including but not limited to motivation, challenges & related generalized tasks (such as domain adaptation, long-tailed recognition, zero-shot learning, and open set recognition) general methodologies for solving FSL. In particular, we will both discuss few-shot learning using conventional methods and from the perspective of building on large pre-trained foundation models. And we will also make an extensive summary of benchmarks and evaluation protocols for few-shot learning.
+                     </p> 
+                     <h4 class="section-heading">Meta-Learning for Few-shot Learning</h4>
+                     <p class="lead"  style="text-align:justify">
+                        Meta-learning aims to transfer knowledge from the experience of learning a set of known tasks to accelerate the sample efficiency of learning new tasks from the same distribution. This learning-to-learn is achieved by optimising the learning algorithm with respect to the sample efficiency of seen tasks. Since it's modern renaissance with roots in meta-learned initialization (MAML) and metric-learners (ProtoNet), the field has blossomed with a plethora of approaches including curvature learning, non-linear metric-learning, generalizable feature embedding, generating feature representations conditional on the few-shot support set an generalizable feature alignment modules.<br> 
+                        In this tutorial, we will review various seminal and state of the art meta-learning methods for FSL and discuss their pros and cons. We will cover both gradient-based and amortised meta-learners. We will introduce some theory for meta-learning, in terms of generalisation bounds, and discuss what insights these hold for algorithm design. Finally, we will discuss current challenges including generalisation beyond the distribution of the training tasks, and applications to tasks beyond image recognition such as segmentation, pose, and reinforcement learning.<br>
+                        This talk is delivered by Prof. Timothy Hospedales.
+                     </p> 
+                     <h4 class="section-heading">Few-shot Learning by Statistical Methods</h4>
+                     <p class="lead"  style="text-align:justify">
+                        Deep learning based models require an avalanche of expensive human labeled training data and many iterations to train their large number of parameters. This severely limits their scalability to the real-world long-tail distributed categories, some of which are with a large number of instances, but with only a few manually annotated. Different to prior arts that leverage meta-learning or data augmentation strategies to alleviate this extremely data scarce problem, this talk will introduce some recent few-shot learning by using statistical methods such as ICI and MFL. Additionally, we will also introduce the methods that exploit the support of unlabeled instances for few-shot visual recognition. Theoretically, under some mild conditions, we show that the methods should be guaranteed to improve the few-shot learning performance by using unlabeled instances.<br>
+                        We will also want to talk about causal inference for few-shot learning. We are particularly interested in understanding the causal inference for few-shot learning, as this may potentially be one of very promising research directions for fewshot learning. Specifically, despite extensive previous efforts are made on few-shot learning tasks, we emphasize that most existing methods did not take into account the distributional shift caused by sample selection bias in the FSL scenario. Such a selection bias can induce spurious correlation between the semantic causal features, that are causally and semantically related to the class label, and the other non-causal features. Critically, the former ones should be invariant across changes in distributions, highly related to the classes of interest, and thus well generalizable to novel classes, while the latter ones are not stable to changes in the distribution. So it is interesting and inspiring to utilize causal inference for few-shot learning.<br>
+                        This long talk is made by Dr. Yanwei Fu.
+                     </p>
+                     <h4 class="section-heading">Few-shot Learning Beyond Recognition Tasks</h4>
+                     <p class="lead"  style="text-align:justify">
+                        While few-shot learning was initiated in the context of object recognition, the lack of data is a fundamental challenge, pervasive and entrenched, in nearly every field of computer vision and machine learning. In recent years, various few-shot learning methods have been proposed to address a much richer space of few-shot learning tasks, ranging from discriminative recognition tasks (e.g., object and scene classification and detection, fine-grained recognition, video action recognition, domain adaptation, and image retrieval), to generative tasks (e.g., image synthesis and human motion prediction), to cross-modality tasks (e.g., with LiDAR and RGB data), to motor control and robotics tasks (e.g., navigation), and to natural language progressing and vision-language tasks (e.g., machine translation, program induction, and visual question answering). In addition, going beyond artificial few-shot settings, recent work has started to investigate a variety of more realistic, large-scale scenarios, including cross-domain, long-tail, open-world, and continual settings.<br>
+
+                        Taking the few-shot generative task as a concrete example, an amortized probabilistic meta-learner is exploited to generate multiple views of an object from just a single image. A generative query network is proposed to render scenes from novel views. Talking heads are synthesized from little data by learning to initialize an adversarial model for rapid adaptation. In the video domain, a weight generator is meta-learned to synthesize videos given a few reference images.<br>
+
+                        This long talk is given by Dr. Yu-Xiong Wang.
+                     </p> 
+ 
+                 </div>   
+             </div>
+         </div>
+         <!-- /.container -->
+     </div>
+ 
+     <!-- Program -->
+     <div id ="program" class="content-section-a">
+ 
+         <div class="container">				
+                 <div class="wow fadeInLeftBig" data-animation-delay="200">   
+                     <h3 class="section-heading">Program</h3>
+ 
+                     <!-- <p class="lead"> -->
+                         <!-- Our program is divided into two sub-sessions: (1) Sparse Learning in Neural Networks and (2) Sparse Learning in Robust Statistical Analysis.  -->
+                     <!-- </p> -->
+                 </div>
+             
+   <table class="table" style="width:100%">
+    <tr class="info">
+        <td><strong>Sessions
+        </strong></td>
+        <td>Title</td>
+        <!-- <td>Video</td> -->
+        <!-- <td>Slides</td> -->
+        <td>Speakers</td>
+      </tr>
+       <tr class="success">
+         <td>10 min</td>
+         <td><strong>Opening Remarks &emsp;
+         </strong></td>
+         <!-- <td></td> -->
+         <!-- <td></td> -->
+         <td>Yanwei Fu</td>
+       </tr>
+ 
+       <tr>
+         <td>30 min</td>
+         <td><strong>Introduction of Few-shot Learning &emsp;
+         </td>
+         <!-- <td>[<a href="https://www.youtube.com/watch?v=leV1qA0_UpQ&list=PL4lAyMKLeT7QmXvX-aMDFXby6gUqZBLAn">Youtube</a>][<a href="https://www.bilibili.com/video/BV1Rg411Q7Zj">Bilibili</a>]</td> -->
+         <!-- <td></td> -->
+         <td>Da Li</td>
+       </tr>
+    
+       <tr class="success">
+         <td>65 min</td>
+         <td><strong>Meta-Learning for Few-shot Learning &emsp;
+         </td>
+         <!-- <td>[<a href="https://www.youtube.com/watch?v=FB1tLdI3JV4&list=PL4lAyMKLeT7QmXvX-aMDFXby6gUqZBLAn&index=2">Youtube</a>][<a href="https://www.bilibili.com/video/BV1Rg411Q7Zj?p=2">Bilibili</a>]</td> -->
+         <!-- <td></td> -->
+         <td>Timothy Hospedales</td>
+       </tr>
+ 
+       <tr>
+         <td>50 min</td>
+        
+         <td><strong>Few-shot Learning by Statistical Methods &emsp;
+         </td>
+         <!-- <td>[<a href="https://www.youtube.com/watch?v=6gKRxFHmu1M&list=PL4lAyMKLeT7QmXvX-aMDFXby6gUqZBLAn&index=3">Youtube</a>][<a href="https://www.bilibili.com/video/BV1Rg411Q7Zj?p=3">Bilibili</a>]</td> -->
+         <!-- <td></td> -->
+         <td>Yanwei Fu</td>
+       </tr>
+
+       <tr class="success">
+        <td>15 min</td>
+        <td><strong>Break &emsp;
+        </strong></td>
+        <td></td>
+        <!-- <td>Yu-Xiong Wang</td> -->
+        <!-- <td></td> -->
+      </tr>
+ 
+       <tr>
+         <td>50 min</td>
+         <td><strong>Few-shot Learning Beyond Recognition Tasks &emsp;
+         </strong></td>
+         <!-- <td></td> -->
+         <td>Yu-Xiong Wang</td>
+         <!-- <td></td> -->
+       </tr>
+ 
+ 
+     </table>
+ 
+             <div class="container">				
+                 <div class="wow fadeInRightBig" data-animation-delay="200">
+                 </div>
+             </div>
+         </div>
+     </div>
+     
+     <!-- Organizers -->
+     <div id="organizers" class="content-section-a"> 
+         
+         <div class="container">
+                 <div class="row wow fadeInRightBig"  data-animation-delay="200">
+                 <h3 class="section-heading">Organizers and Speakers</h3>
+ 
+                 <div class="col-sm-2 wow fadeInRightBig"  data-animation-delay="200">   
+                     <center><img  class="img-responsive img-rounded" style="border-radius: 50%" height="150" width="150" src="img/organizer/fuyanwei.png" alt=""></center>
+                     <h4 class="section-heading"><center><a href="https://yanweifu.github.io">Yanwei Fu</a></center></h4>
+                     <h5 class="section-heading"><center><i>Fudan University</i></center></h5>
+                  </div>
+
+                <div class="col-sm-2 wow fadeInRightBig"  data-animation-delay="200">   
+                        <center><img  class="img-responsive img-rounded" style="border-radius: 50%" height="150" width="150" src="img/organizer/dali.JPG" alt=""></center>
+                        <h4 class="section-heading"><center><a href="https://dali-dl.github.io">Da Li</a></center></h4>
+                        <h5 class="section-heading"><center><i>Samsung AI Centre, Cambridge</i></center></h5>
+                </div>
+
+                <div class="col-sm-2 wow fadeInRightBig"  data-animation-delay="200">   
+                    <center><img  class="img-responsive img-rounded" style="border-radius: 50%" height="150" width="150" src="img/organizer/wang_yuxiong.png" alt=""></center>
+                    <h4 class="section-heading"><center><a href="https://yxw.web.illinois.edu">Yu-Xiong Wang</a></center></h4>
+                    <h5 class="section-heading"><center><i>University of Illinois at Urbana-Champaign</i></center></h5>
+            </div>
+
+                <div class="col-sm-2 wow fadeInRightBig"  data-animation-delay="200">   
+                    <center><img  class="img-responsive img-rounded" style="border-radius: 50%" height="150" width="150" src="img/organizer/Hospedales_T.jpg" alt=""></center>
+                    <h4 class="section-heading"><center><a href="https://yanweifu.github.io">Timothy Hospedales</a></center></h4>
+                    <h5 class="section-heading"><center><i>University of Edinburgh</i></center></h5>
+            </div>
+
+ 
+ 
+         </div>
+     </div>
+ 
+         <!-- /.container -->
+     
+     <div id="contacts" class="content-section-c ">
+              <!-- Contacts -->
+         <div class="container">
+             <div class="row">
+             
+                 <!--div class="col-sm-6 pull-right wow fadeInRightBig">
+                     <img class="img-responsive " src="img/ipad.png" alt="">
+                 </div-->
+                 
+                 <div class="wow fadeInLeftBig" data-animation-delay="200">   
+                     <h3 class="section-heading" style="color:white">Contacts</h3>
+                     <!--div class="sub-title lead3">Lorem ipsum dolor sit atmet sit dolor greand fdanrh<br> sdfs sit atmet sit dolor greand fdanrh sdfs</div-->
+                     <p class="lead"  style="text-align:left;color:white">
+                         Contact the Organizing Committee: yanweifu@fudan.edu.cn
+                     </p>
+                     
+                 </div>   				
+             </div>
+             <div class="row">
+             
+                         <div class="col-md-6 col-md-offset-3 text-center">
+                             <div >
+                                     <div class="morph-button ">
+                                         <button type="button"></button>
+                                         
+                                     </div>
+                             </div>
+                         </div>	
+             </div>
+ 
+         </div>
+     </div>	
+ 
+    
+     <footer>
+     
+     </footer>
+ 
+     <!-- JavaScript -->
+     <script src="js/jquery-1.10.2.js"></script>
+     <script src="js/bootstrap.js"></script>
+     <script src="js/owl.carousel.js"></script>
+     <script src="js/script.js"></script>
+     <!-- StikyMenu -->
+     <script src="js/stickUp.min.js"></script>
+     <script type="text/javascript">
+       jQuery(function($) {
+         $(document).ready( function() {
+           $('.navbar-default').stickUp();
+           
+         });
+       });
+     
+     </script>
+     <!-- Smoothscroll -->
+     <script type="text/javascript" src="js/jquery.corner.js"></script> 
+     <script src="js/wow.min.js"></script>
+     <script>
+      new WOW().init();
+     </script>
+     <script src="js/classie.js"></script>
+     <script src="js/uiMorphingButton_inflow.js"></script>
+     <!-- Magnific Popup core JS file -->
+     <script src="js/jquery.magnific-popup.js"></script> 
+ </body>
+ 
+ </html>
+ 
